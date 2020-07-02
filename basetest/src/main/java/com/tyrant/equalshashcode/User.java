@@ -1,14 +1,19 @@
 package com.tyrant.equalshashcode;
 
-import java.util.Objects;
-
 /**
  * @author:profiteur
- * @create 2020-06-04 14:14
+ * @create 2020-07-02 15:57
  **/
 public class User implements Cloneable{
     private String name;
     private String age;
+
+    public User() {}
+
+    public User(String name, String age) {
+        this.name = name;
+        this.age = age;
+    }
 
     public String getName() {
         return name;
@@ -24,19 +29,5 @@ public class User implements Cloneable{
 
     public void setAge(String age) {
         this.age = age;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return Objects.equals(name, user.name) &&
-                Objects.equals(age, user.age);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, age);
     }
 }
