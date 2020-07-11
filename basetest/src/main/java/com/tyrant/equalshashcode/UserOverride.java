@@ -43,6 +43,11 @@ public class UserOverride implements Cloneable{
     }
 
     @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+    @Override
     public int hashCode() {
         return Objects.hash(name, age);
     }

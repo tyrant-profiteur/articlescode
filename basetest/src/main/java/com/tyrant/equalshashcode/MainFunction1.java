@@ -5,7 +5,7 @@ package com.tyrant.equalshashcode;
  * @create 2020-06-04 12:48
  **/
 public class MainFunction1 {
-    public static void main(String[] args){
+    public static void main(String[] args) throws CloneNotSupportedException {
         //基本类型
         int a = 1,b = 1,c = 2;
         System.out.println(a == b);//true
@@ -21,16 +21,11 @@ public class MainFunction1 {
         User user2 = user;
         //有参构造
         User user3 = new User("老王","24");
+        //clone
+        User user4 = (User)user.clone();
         System.out.println(user == user1);//false
         System.out.println(user == user2);//true
         System.out.println(user == user3);//false
-        System.out.println(user.equals(user1));//false
-        System.out.println(user.equals(user2));//true
-        System.out.println(user.equals(user3));//false
-        System.out.println( "user:" + user);//user:com.tyrant.equalshashcode.User@135fbaa4
-        System.out.println("user1:" + user1);//user1:com.tyrant.equalshashcode.User@45ee12a7
-        System.out.println("user2:" + user2);//user2:com.tyrant.equalshashcode.User@135fbaa4
-        System.out.println("user3:" + user3);//user3:com.tyrant.equalshashcode.User@330bedb4
-
+        System.out.println(user == user4);//false
     }
 }

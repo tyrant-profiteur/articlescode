@@ -4,9 +4,9 @@ package com.tyrant.equalshashcode;
  * @author:profiteur
  * @create 2020-07-10 17:13
  **/
-public class MainFunction2 {
+public class MainFunction3 {
     public static void main(String[] args) throws CloneNotSupportedException {
-        System.out.println("--------------不重写 equals-----------------");
+        System.out.println("--------------不重写 hashcode-----------------");
         //无参构造
         User user = new User();
         user.setName("老王");
@@ -19,11 +19,11 @@ public class MainFunction2 {
         User user3 = new User("老王","24");
         //clone
         User user4 = (User)user.clone();
-        System.out.println(user.equals(user1));//false
-        System.out.println(user.equals(user2));//true
-        System.out.println(user.equals(user3));//false
-        System.out.println(user.equals(user4));//false
-        System.out.println("--------------重写 equals-----------------");
+        System.out.println(user.hashCode() == user1.hashCode());//false
+        System.out.println(user.hashCode() == user2.hashCode());//true
+        System.out.println(user.hashCode() == user3.hashCode());//false
+        System.out.println(user.hashCode() == user4.hashCode());//false
+        System.out.println("--------------重写 hashcode-----------------");
         //无参构造
         UserOverride userOverride = new UserOverride();
         userOverride.setName("老王");
@@ -36,9 +36,9 @@ public class MainFunction2 {
         UserOverride userOverride3 = new UserOverride("老王","24");
         //clone
         UserOverride userOverride4 = (UserOverride)userOverride.clone();
-        System.out.println(userOverride.equals(userOverride1));//true
-        System.out.println(userOverride.equals(userOverride2));//true
-        System.out.println(userOverride.equals(userOverride3));//true
-        System.out.println(userOverride.equals(userOverride4));//true
+        System.out.println(userOverride.hashCode() == userOverride1.hashCode());//true
+        System.out.println(userOverride.hashCode() == userOverride2.hashCode());//true
+        System.out.println(userOverride.hashCode() == userOverride3.hashCode());//true
+        System.out.println(userOverride.hashCode() == userOverride4.hashCode());//true
     }
 }

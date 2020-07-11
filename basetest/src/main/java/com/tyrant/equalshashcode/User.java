@@ -30,4 +30,9 @@ public class User implements Cloneable{
     public void setAge(String age) {
         this.age = age;
     }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
 }
